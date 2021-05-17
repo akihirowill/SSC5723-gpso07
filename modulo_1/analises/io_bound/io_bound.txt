@@ -1,0 +1,5 @@
+Uso de 96% da CPU
+0.00s em modo kernel
+0.02s em modo usuário
+0 Trocas de contexto involuntárias
+1 Trocas de contexto voluntárias
