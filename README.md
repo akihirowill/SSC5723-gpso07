@@ -42,19 +42,19 @@ strace -o analytics/processo/stats.txt -c open bin/processo
 A coluna "calls" na saída a seguir indica quantas vezes essa chamada específica do sistema foi executada.
 
 
-![stats](module_1/assets/stats.png)
+![stats](modulo_1/assets/stats.png)
 
 
 No trecho do código processo.c, temos a chama de sistema ***fork()***.
 
-![stats](module_1/assets/process-c.png)
+![stats](modulo_1/assets/process-c.png)
 
 
 Na análise do binário utilizando o Strace, a chamada de sistema fork() não aparece como uma chamada dentro do log do Strace. 
 
 Ocorre que, a chamada fork() quando escrita na linguagem C, utiliza a biblioteca glibc [3], que por sua vez implementa o fork() como um wrapper da chamada de sistema Clone, que podem ser observadas abaixo.
 
-![stats](module_1/assets/process-ana.png)
+![stats](modulo_1/assets/process-ana.png)
 
 Na coluna "syscall" é possível observar a chamada de sistema clone, que implementa o fork() em baixo nível.
 
@@ -137,7 +137,7 @@ O problema do Produtor e o Consumidor consiste em um conjunto de processos que c
 
 Esse trabalho busca exemplificar de forma clara, situações de impasses que ocorrem no gerenciamento de processos de um Sistema Operacional
 
-![stats](module_2/assets/produtor-consumidor.jpg)
+![stats](modulo_2/assets/produtor-consumidor.jpg)
 
 Para garantir o acesso a essas variáveis e garantir o sincronimos vamos utilizar semáforos. De forma análoga ao semáforo de trânsito, na computação é um componente que tem como função o controle de acesso a recursos compartilhados num ambiente multitarefa. Esta variável pode ser manipulada através de duas primitivas atómicas, isto é, que não podem ser interrompidas por processos.
 
