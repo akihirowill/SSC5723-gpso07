@@ -1,0 +1,6 @@
+Command exited with non-zero status 112
+Uso de 90% da CPU
+0.00s em modo kernel
+0.00s em modo usuário
+0 Trocas de contexto involuntárias
+1 Trocas de contexto voluntárias
